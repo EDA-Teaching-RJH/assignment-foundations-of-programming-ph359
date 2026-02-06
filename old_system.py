@@ -29,7 +29,7 @@ def run_system_monolith():
         if opt == "1": #Sytax Error: single equals (=) symbol instead of two (==). the if statement was being assigned to '1', instead of being equals to '1'.
             print("Current Crew List:")
             
-            for i in range(10):
+            for i in range(4): #Changed Range from 10, to 4 as lists n, and d only contain 4 items
                 print(n[i] + " - " + r[i]) 
                 
         elif opt == "2":
