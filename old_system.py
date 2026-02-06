@@ -13,6 +13,7 @@ def run_system_monolith():
     loading = 0
     while loading < 5:
         print("Loading module " + str(loading))
+        loading += 1 #Increases loading by one each time until it reaches the value 5, the loop stops
         
     
     while True:
