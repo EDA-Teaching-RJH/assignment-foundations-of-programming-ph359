@@ -13,7 +13,6 @@ def run_system_monolith():
     loading = 0
     while loading < 5:
         print("Loading module " + str(loading))
-        loading += 1 #Increases loading by one each time until it reaches the value 5, the loop stops
         
     
     while True:
@@ -26,10 +25,10 @@ def run_system_monolith():
         
         opt = input("Select option: ")
         
-        if opt == "1": #Sytax Error: single equals (=) symbol instead of two (==). the if statement was being assigned to '1', instead of being equals to '1'.
+        if opt = "1":  
             print("Current Crew List:")
             
-            for i in range(4): #Changed Range from 10, to 4 as lists n, and d only contain 4 items
+            for i in range(10):
                 print(n[i] + " - " + r[i]) 
                 
         elif opt == "2":
@@ -57,7 +56,7 @@ def run_system_monolith():
             for rank in r:
                 if rank == "Captain" or "Commander": 
                     count = count + 1
-            print("High ranking officers: " + str(count)) #str(x) converts 'count' (which is an interger) to a string.
+            print("High ranking officers: " + count) 
             
         elif opt == "5":
             print("Shutting down.")
@@ -89,4 +88,4 @@ def run_system_monolith():
             
         print("End of cycle.")
 
-run_system_monolith() #Sytax Error: Missing Brackets 
+run_system_monolith
