@@ -38,7 +38,8 @@ def run_system_monolith():
             
            
             n.append(new_name)
-            r.append(new_rank) #Add to rank to list r
+            r.append(new_rank) #Add new rank to list r
+            d.append(new_div) #Add new div to list d
             print("Crew member added.")
             
         elif opt == "3":
