@@ -29,7 +29,7 @@ def run_system_monolith():
             print("Current Crew List:")
             
             for i in range(len(n)): #Made the range equals to the length of list n
-                print(n[i] + " - " + r[i]) 
+                print(n[i] + " - " + r[i] " -" + d[i]) #Added Division to view crew
                 
         elif opt == "2":
             new_name = input("Name: ")
