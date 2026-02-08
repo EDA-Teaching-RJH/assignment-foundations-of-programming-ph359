@@ -13,7 +13,7 @@ def run_system_monolith():
     loading = 0
     while loading < 5:
         print("Loading module " + str(loading))
-        loading += 1 # Made loading go up increments of 1
+        loading += 1 # Made loading go up increments of 1.
         
     
     while True:
@@ -26,11 +26,11 @@ def run_system_monolith():
         
         opt = input("Select option: ")
         
-        if opt == "1": #Added == to made opt equals to 1
+        if opt == "1": #Added == to made opt equals to 1.
             print("Current Crew List:")
             
-            for i in range(len(n)): #Made the range equals to the length of list n
-                print(n[i] + " - " + r[i] + " - " + d[i]) #Added Division to view crew
+            for i in range(len(n)): #Made the range equals to the length of list n.
+                print(n[i] + " - " + r[i] + " - " + d[i]) #Added Division to view crew.
                 
         elif opt == "2":
             new_name = input("Name: ")
@@ -39,8 +39,8 @@ def run_system_monolith():
             
            
             n.append(new_name)
-            r.append(new_rank) #Add new rank to list r
-            d.append(new_div) #Add new div to list d
+            r.append(new_rank) #Add new rank to list r.
+            d.append(new_div) #Add new div to list d.
             print("Crew member added.")
             
         elif opt == "3":
