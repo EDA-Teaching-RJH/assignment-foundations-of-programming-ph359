@@ -4,6 +4,7 @@ def init_database(): #1
     divs = ["Command", "Science", "Operations", "Operations", "Operations"]
     ids = ["001", "002", "003", "004", "005"]
     return names, ranks, divs, ids
+
 init_database()
 
 def display_menu():
