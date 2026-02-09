@@ -28,7 +28,8 @@ def display_menu():
     print("8) Count Officers")
     print("9) Exit & logout")
 
-    
+    choice = input("\nChoose an option: ")
+    return choice
 
 display_menu()
 
