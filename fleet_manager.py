@@ -1,8 +1,10 @@
 def init_database(): #1
     names = ["Pike", "Spock", "Scott", "Uhura", "Chekov"]
-    ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Ensign"]
+    ranks = ["Captain", "Commander", "Lieutenant Commander", "Lieutenant", "Ensign"]
     divs = ["Command", "Science", "Operations", "Operations", "Operations"]
     ids = ["001", "002", "003", "004", "005"]
+
+    return names, ranks, divs, ids
 
 
 
