@@ -34,5 +34,6 @@ def display_menu():
 
 display_menu()
 
+def add_members():
 
-
+add_members()
