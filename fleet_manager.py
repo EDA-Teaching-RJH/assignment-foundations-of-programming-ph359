@@ -1,4 +1,9 @@
 def init_database(): #1
+    names = []
+    ranks = []
+    divs = []
+    ids = []
+
 
 
 
@@ -47,7 +52,7 @@ def count_officer(): #10
 
 
 
-def main():
+def main(): 
 
 
 
