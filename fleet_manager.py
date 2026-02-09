@@ -9,16 +9,26 @@ init_database()
 def display_menu():
     print("\n---Initilising Fleet Manager---")
     print("   Welcome to Fleet Manager   ")
-
+    
     print("\n=========================")
+    
     login = input("Enter Full Name: ").title().strip()
     print(f"Logged in as: {login}")
+    
     print("=========================") 
 
+    print("\n-----Options-----")
+    print("1) Add Members")
+    print("2) Remove Members")
+    print("3) Update Ranks")
+    print("4) Display Roster")
+    print("5) Search Crew")
+    print("6) Filter by Diviosn")
+    print("7) Calculate Payroll")
+    print("8) Count Officers")
+    print("9) Exit & logout")
+
     
-
-
-
 
 display_menu()
 
