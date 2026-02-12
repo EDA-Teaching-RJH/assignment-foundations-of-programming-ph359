@@ -1,4 +1,4 @@
-def init_database(): #fn1
+def init_database(): #fn1 (Database)
 #Data-points
     names = ["Picard", "Riker", "Data", "Worf", "Crusher"]
     ranks = ["Captain", "Commander", "Lieutenant Commander", "Lieutenant", "Acting Ensign"]
@@ -6,7 +6,7 @@ def init_database(): #fn1
     ids = [1, 2, 3, 4, 5]
     return names, ranks, divs, ids
 
-def display_menu(): #fn2
+def display_menu(): #fn2 (Interface)
     print("\n---Initilising Fleet Manager---")
     print("   Welcome to Fleet Manager   ")
     
