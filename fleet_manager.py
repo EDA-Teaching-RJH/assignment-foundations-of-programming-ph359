@@ -3,9 +3,9 @@ def init_database(): #fn1
     names = ["Picard", "Riker", "Data", "Worf", "Crusher"]
     ranks = ["Captain", "Commander", "Lieutenant Commander", "Lieutenant", "Acting Ensign"]
     divs = ["Command", "Command", "Operations", "Operations", "Sciences"]
-    ids = ["1", "2", "3" ,"4", "5"]
+    ids = [1, 2, 3, 4, 5]
     return names, ranks, divs, ids
-
+init_database()
 def display_menu(): #fn2
     print("\n---Initilising Fleet Manager---")
     print("   Welcome to Fleet Manager   ")
@@ -48,11 +48,11 @@ def add_member(names, ranks, divs, ids): #fn3 (opt 1)
 #Statements
     if rank not in valid_ranks:
         print("Invalid Rank. Please choose from; Captain, Commander," \
-        " Lieutentant Commander, Lieutenant, Acting Ensign")
+        " Lieutentant Commander, Lieutenant, Acting Ensign.")
         return
     
     if division not in valid_divisions:
-        print("invalid Divison. Choose from; Command, Operations, Sciences")
+        print("invalid Divison. Choose from; Command, Operations, Sciences.")
         return
     
     if new_id in ids:
@@ -64,19 +64,19 @@ def add_member(names, ranks, divs, ids): #fn3 (opt 1)
     divs.append(division)
     ids.append(new_id)
 
-    print(f"{rank}{name} added to crew")
-
+    print(f"{rank}{name} added to crew.")
+add_member()
 def remove_member(names, ranks, divs, ids): #fn4 (opt 2)
 #Attempt to Convert input into an interger    
     try: 
         sel_id = int(input("Enter ID to remove: ").strip())
 #Runs of conversion fails, Stops programme termination        
     except ValueError: 
-        print("ID must be a number")
+        print("ID must be a number.")
         return
 #Checks if selected ID is in datapoint, ids   
     if sel_id not in ids: 
-        print("ID entered was not found")
+        print("ID entered was not found.")
         return
 #Finds postion of selected ID, links all parrallel lists    
     idx = ids.index(sel_id) 
@@ -88,7 +88,39 @@ def remove_member(names, ranks, divs, ids): #fn4 (opt 2)
     divs.pop(idx)
     ids.pop(idx)
 
-    print(f"{removed_crew} was removed from crew")
+    print(f"{removed_crew} was removed from crew.")
+
+def update_rank(names, ranks, ids): #fn4 (opt 3)
+    valid_ranks = [ 
+         "Captain", "Commander", "Lieutenant Commander", 
+        "Lieutenant", "Acting Ensign."
+    ]    
+#Attempt to Convert input into an interger    
+    try: 
+        sel_id = int(input("Enter ID to remove: ").strip())
+#Runs of conversion fails, Stops programme termination        
+    except ValueError: 
+        print("ID must be a number")
+        return
+#Checks if selected ID is in datapoint, ids   
+    if sel_id not in ids: 
+        print("ID entered was not found.")
+        return
+
+    idx = ids.index(sel_id)
+    new_rank = input("Enter new rank: ").strip().title()
+
+    if new_rank not in valid_ranks:
+        print("Invalid Rank. Please choose from; Captain, Commander," \
+        " Lieutentant Commander, Lieutenant, Acting Ensign.")
+        return
+    
+    old_rank = ranks[idx]
+    new_rank = ranks[idx]
+
+    print(f"{names[idx]}'s rank successfully updated from {old_rank} to {new_rank}.")
+    
+
 
 
     
