@@ -17,7 +17,7 @@ def display_menu(): #fn2
     
     print("=========================") 
 #Interface
-    print("\n-----Options-----")
+    print("\n----- Options -----")
     print("1. Add Members")
     print("2. Remove Members")
     print("3. Update Ranks")
@@ -120,7 +120,22 @@ def update_rank(names, ranks, ids): #fn5 (opt 3)
 
     print(f"{names[idx]}'s rank successfully updated from {old_rank} to {new_rank}.")
     
-def display_roster(names, ranks, divs, ids): 
+def display_roster(names, ranks, divs, ids): #Fn6 (Opt 4)
+    if len(names) == 0:
+        #Displays info text instead of table
+        print("Roster is empty.")
+        return
+    #Table format for Roster
+    print("\n-------------------- Crew Roster --------------------")
+    print(f"{'ID':<5} {'NAME':<12} {'RANK':<22} {'DIVISON':<12}")
+    print("-----------------------------------------------------")
+
+    for i in range(len(names)):
+        print(f"{ids[i]:<5} {names[i]:<12} {ranks[i]:<22} {divs[i]:<12}")
+
+    print("-----------------------------------------------------")
+    
+    
 
 
 
