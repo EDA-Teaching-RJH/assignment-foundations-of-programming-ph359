@@ -5,7 +5,7 @@ def init_database(): #fn1
     divs = ["Command", "Command", "Operations", "Operations", "Sciences"]
     ids = [1, 2, 3, 4, 5]
     return names, ranks, divs, ids
-init_database()
+
 def display_menu(): #fn2
     print("\n---Initilising Fleet Manager---")
     print("   Welcome to Fleet Manager   ")
@@ -64,8 +64,8 @@ def add_member(names, ranks, divs, ids): #fn3 (opt 1)
     divs.append(division)
     ids.append(new_id)
 
-    print(f"{rank}{name} added to crew.")
-add_member()
+    print(f"{rank} {name} added to crew.")
+
 def remove_member(names, ranks, divs, ids): #fn4 (opt 2)
 #Attempt to Convert input into an interger    
     try: 
@@ -97,7 +97,7 @@ def update_rank(names, ranks, ids): #fn4 (opt 3)
     ]    
 #Attempt to Convert input into an interger    
     try: 
-        sel_id = int(input("Enter ID to remove: ").strip())
+        sel_id = int(input("Enter ID: ").strip())
 #Runs of conversion fails, Stops programme termination        
     except ValueError: 
         print("ID must be a number")
@@ -116,14 +116,11 @@ def update_rank(names, ranks, ids): #fn4 (opt 3)
         return
     
     old_rank = ranks[idx]
-    new_rank = ranks[idx]
+    ranks[idx] = new_rank
 
     print(f"{names[idx]}'s rank successfully updated from {old_rank} to {new_rank}.")
     
 
-
-
-    
     
 
     
