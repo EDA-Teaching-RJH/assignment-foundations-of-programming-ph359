@@ -1,4 +1,4 @@
-def init_database(): #1
+def init_database(): #fn1
 #Data-points
     names = ["Picard", "Riker", "Data", "Worf", "Crusher"]
     ranks = ["Captain", "Commander", "Lieutenant Commander", "Lieutenant", "Acting Ensign"]
@@ -6,7 +6,7 @@ def init_database(): #1
     ids = ["1", "2", "3" ,"4", "5"]
     return names, ranks, divs, ids
 
-def display_menu(): #2
+def display_menu(): #fn2
     print("\n---Initilising Fleet Manager---")
     print("   Welcome to Fleet Manager   ")
     
@@ -31,15 +31,15 @@ def display_menu(): #2
     choice = input("\nChoose an option: ")
     return choice
 
-def add_member(names, ranks, divs, ids): #3 (opt 1)
+def add_member(names, ranks, divs, ids): #fn3 (opt 1)
 #New members inputs
     name = input("Enter name: ").strip().title()
     rank = input("Enter rank: ").strip().title()
     division = input("Enter Divison (Command/Operations/Sciences): ").strip().title()
-    new_id = int(input("Enter crew ID: "))
+    new_id = int(input("Enter crew ID: ").strip())
 #validations
-    valid_ranks = [
-        "Captain", "Commander", "Lieutenant Commander", 
+    valid_ranks = [ 
+         "Captain", "Commander", "Lieutenant Commander", 
         "Lieutenant", "Acting Ensign"
     ]
     valid_divisions = [
@@ -64,9 +64,41 @@ def add_member(names, ranks, divs, ids): #3 (opt 1)
     divs.append(division)
     ids.append(new_id)
 
-    print(f"{name} added to crew")
+    print(f"{rank}{name} added to crew")
+
+def remove_member(names, ranks, divs, ids): #fn4 (opt 2)
+#Attempt to Convert input into an interger    
+    try: 
+        sel_id = int(input("Enter ID to remove: ").strip())
+#Runs of conversion fails, Stops programme termination        
+    except ValueError: 
+        print("ID must be a number")
+        return
+#Checks if selected ID is in datapoint, ids   
+    if sel_id not in ids: 
+        print("ID entered was not found")
+        return
+#Finds postion of selected ID, links all parrallel lists    
+    idx = ids.index(sel_id) 
+    removed_crew = names[idx] 
+#Removes all data corressponding to the selected remove ID
+#Keep datapoint order synced
+    names.pop(idx)
+    ranks.pop(idx)
+    divs.pop(idx)
+    ids.pop(idx)
+
+    print(f"{removed_crew} was removed from crew")
 
 
-                
+    
+    
+
+    
+
+    
+
+
+
 
 
