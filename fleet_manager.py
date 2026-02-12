@@ -93,7 +93,7 @@ def remove_member(names, ranks, divs, ids): #fn4 (opt 2)
 def update_rank(names, ranks, ids): #fn5 (opt 3)
     valid_ranks = [ 
          "Captain", "Commander", "Lieutenant Commander", 
-        "Lieutenant", "Acting Ensign."
+        "Lieutenant", "Acting Ensign"
     ]    
 #Attempt to Convert input into an interger    
     try: 
@@ -120,8 +120,9 @@ def update_rank(names, ranks, ids): #fn5 (opt 3)
 
     print(f"{names[idx]}'s rank successfully updated from {old_rank} to {new_rank}.")
     
+def display_roster(names, ranks, divs, ids): 
 
-    
+
 
     
 
