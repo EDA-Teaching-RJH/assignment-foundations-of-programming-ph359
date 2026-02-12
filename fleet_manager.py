@@ -90,7 +90,7 @@ def remove_member(names, ranks, divs, ids): #fn4 (opt 2)
 
     print(f"{removed_crew} was removed from crew.")
 
-def update_rank(names, ranks, ids): #fn4 (opt 3)
+def update_rank(names, ranks, ids): #fn5 (opt 3)
     valid_ranks = [ 
          "Captain", "Commander", "Lieutenant Commander", 
         "Lieutenant", "Acting Ensign."
