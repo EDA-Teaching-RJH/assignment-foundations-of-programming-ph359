@@ -106,7 +106,7 @@ def update_rank(names, ranks, ids): #fn5 (opt 3)
     if sel_id not in ids: 
         print("ID entered was not found.")
         return
-
+#Links selected ID to all lists in database
     idx = ids.index(sel_id)
     new_rank = input("Enter new rank: ").strip().title()
 
@@ -114,7 +114,7 @@ def update_rank(names, ranks, ids): #fn5 (opt 3)
         print("Invalid Rank. Please choose from; Captain, Commander," \
         " Lieutentant Commander, Lieutenant, Acting Ensign.")
         return
-    
+  #Assigns new rank to selected ID, replaces old rank  
     old_rank = ranks[idx]
     ranks[idx] = new_rank
 
@@ -122,10 +122,10 @@ def update_rank(names, ranks, ids): #fn5 (opt 3)
     
 def display_roster(names, ranks, divs, ids): #Fn6 (Opt 4)
     if len(names) == 0:
-        #Displays info text instead of table
+#Displays info text instead of table
         print("Roster is empty.")
         return
-    #Table format for Roster
+#Table format for Roster
     print("\n-------------------- Crew Roster --------------------")
     print(f"{'ID':<5} {'NAME':<12} {'RANK':<22} {'DIVISON':<12}")
     print("-----------------------------------------------------")
@@ -134,7 +134,8 @@ def display_roster(names, ranks, divs, ids): #Fn6 (Opt 4)
         print(f"{ids[i]:<5} {names[i]:<12} {ranks[i]:<22} {divs[i]:<12}")
 
     print("-----------------------------------------------------")
-    
+
+def search_crew(names, ranks, divs, ids): #Fn7 (Opt 5)
     
 
 
