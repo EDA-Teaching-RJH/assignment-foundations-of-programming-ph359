@@ -17,8 +17,9 @@ def display_menu(login): #fn2 (Interface)
     print("7. Calculate Payroll")
     print("8. Count Officers")
     print("9. Exit & logout")
-#input choice
+    
     choice = input("\nselect option: ")
+    print("=========================")
     return choice
 
 def add_member(names, ranks, divs, ids): #fn3 (opt 1)
@@ -129,7 +130,9 @@ def search_crew(names, ranks, divs, ids): #Fn7 (Opt 5)
 
     for i in range(len(names)):
         if crew_search in names[i]:
+            print("=========================")
             print(f"{ids[i]} - {names[i]} - {ranks[i]} - {divs[i]}")
+            print("=========================")
    
 def filter_by_division(names, ranks, divs, ids): #Fn8 (opt6)
     filter = input("Enter divison (Command/Operations/Sciences): ").strip().title()
@@ -141,14 +144,16 @@ def filter_by_division(names, ranks, divs, ids): #Fn8 (opt6)
 
     for i in range(len(names)):
         if divs[i] == filter:
+            print("=========================")
             print(f"{ids[i]} - {names[i]} - {ranks[i]} - {divs[i]}")
+            print("=========================")
 
 def calculate_payroll(ranks): #Fn9 (opt7)
     pay_table = {
         "Captain": 1000,
         "Commander": 800,
         "Lieutenant Commander": 600,
-        "Lieutentant": 400,
+        "Lieutenant": 400,
         "Acting Ensign": 200
     }
     total = 0
@@ -193,10 +198,14 @@ def fleet_manager(): #Fn11 (Main)
             filter_by_division(names, ranks, divs, ids)
         elif choice == "7":
             total = calculate_payroll(ranks)
+            print("=========================")
             print("Total cost of crew: ", total)
+            print("=========================")
         elif choice == "8":
             officers = count_officers(ranks)
+            print("=========================")
             print("officers in crew:", officers)
+            print("=========================")
         elif choice == "9":
             print("Exiting Fleet Manager")
             break
