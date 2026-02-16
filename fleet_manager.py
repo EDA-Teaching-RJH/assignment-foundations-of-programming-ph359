@@ -161,7 +161,16 @@ def calculate_payroll(ranks): #Fn9 (opt7)
         elif i == "Acting Ensign":
             total += 200
 
-    return total
+    return total 
+
+def count_officers(ranks): #Fn10 (opt7)
+    officers = 0
+
+    for i in ranks:
+        if i == "Captain" or i == "Commander":
+            officers += 1
+
+    return officers
 
 def fleet_manager(): #Fn11 (Main)
     names, ranks, divs, ids = init_database()
