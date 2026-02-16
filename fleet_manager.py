@@ -18,8 +18,8 @@ def display_menu(): #fn2 (Interface)
     print("=========================") 
 #Interface
     print("\n----- Options -----")
-    print("1. Add Members")
-    print("2. Remove Members")
+    print("1. Add Crew")
+    print("2. Remove Crew")
     print("3. Update Ranks")
     print("4. Display Roster")
     print("5. Search Crew")
@@ -136,6 +136,22 @@ def display_roster(names, ranks, divs, ids): #Fn6 (Opt 4)
     print("-----------------------------------------------------")
 
 def search_crew(names, ranks, divs, ids): #Fn7 (Opt 5)
+
+    
+    crew_search = input("Search crew, Enter name: ").strip().title()
+    print(f"\nSearch results for: {crew_search} ")
+
+    for i in range(len(names)):
+        if crew_search in names[i]:
+            print(f"{ids[i]} - {names[i]} - {ranks[i]} - {divs[i]}")
+        else:
+            print(f"({crew_search} was not found)")
+
+
+ 
+            
+
+    
     
 
 
