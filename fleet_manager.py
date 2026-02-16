@@ -1,3 +1,4 @@
+
 def init_database(): #fn1 (Database)
 #Data-points
     names = ["Picard", "Riker", "Data", "Worf", "Crusher"]
@@ -184,6 +185,11 @@ def main(): #Fn11 (Main)
 
         if choice == "1":
             add_member(names, ranks, divs, ids)
+        elif choice == "2":
+            remove_member(names, ranks, divs, ids)
+        elif choice == "3":
+            update_rank(names, ranks, ids)
+        
             
 
 
