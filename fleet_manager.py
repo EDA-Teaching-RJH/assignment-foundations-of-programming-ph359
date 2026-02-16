@@ -42,9 +42,7 @@ def add_member(names, ranks, divs, ids): #fn3 (opt 1)
          "Captain", "Commander", "Lieutenant Commander", 
         "Lieutenant", "Acting Ensign"
     ]
-    valid_divisions = [
-        "Command","Operations","Sciences"
-        ]
+    valid_divisions = ["Command","Operations","Sciences"]
 #Statements
     if rank not in valid_ranks:
         print("Invalid Rank. Please choose from; Captain, Commander," \
@@ -136,19 +134,28 @@ def display_roster(names, ranks, divs, ids): #Fn6 (Opt 4)
     print("-----------------------------------------------------")
 
 def search_crew(names, ranks, divs, ids): #Fn7 (Opt 5)
-
-    
     crew_search = input("Search crew, Enter name: ").strip().title()
     print(f"\nSearch results for: {crew_search} ")
 
     for i in range(len(names)):
         if crew_search in names[i]:
             print(f"{ids[i]} - {names[i]} - {ranks[i]} - {divs[i]}")
-        else:
-            print(f"({crew_search} was not found)")
+   
+def filter_by_division(names, ranks, divs, ids): #Fn8 (opt6)
+    filter = input("Enter divison (Command/Operations/Sciences): ").strip().title()
+    valid_divisions = ["Command","Operations","Sciences"]
+    
+    if filter not in valid_divisions:
+        print("Invalid divison.")
+        return
+
+    for i in range(len(names)):
+        if divs[i] == filter:
+            print(f"{ids[i]} - {names[i]} - {ranks[i]} - {divs[i]}")
+        
 
 
- 
+
             
 
     
@@ -156,7 +163,6 @@ def search_crew(names, ranks, divs, ids): #Fn7 (Opt 5)
 
 
 
-    
 
     
 
