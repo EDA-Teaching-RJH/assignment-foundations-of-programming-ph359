@@ -168,7 +168,14 @@ def calculate_payroll(ranks): #Fn9 (opt7)
     return total
 
 def count_officers(ranks): #Fn10 (opt7)
-    
+    officers = 0
+
+    for i in ranks:
+        if i == "Captain" or i == "Commander":
+            officers += 1
+
+    return officers
+
 
 
 
