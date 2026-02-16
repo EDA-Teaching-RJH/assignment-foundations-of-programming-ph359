@@ -180,7 +180,7 @@ def count_officers(ranks): #Fn10 (opt7)
 def fleet_manager(): #Fn11 (Main)
     names, ranks, divs, ids = init_database()
 
-    while true:
+    while True:
         choice = display_menu()
 
         if choice == "1":
