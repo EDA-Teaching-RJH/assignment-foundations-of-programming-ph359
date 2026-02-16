@@ -1,4 +1,3 @@
-
 def init_database(): #fn1 (Database)
 #Data-points
     names = ["Picard", "Riker", "Data", "Worf", "Crusher"]
@@ -7,17 +6,7 @@ def init_database(): #fn1 (Database)
     ids = [1, 2, 3, 4, 5]
     return names, ranks, divs, ids
 
-def display_menu(): #fn2 (Interface)
-    print("\n---Initilising Fleet Manager---")
-    print("   Welcome to Fleet Manager   ")
-    
-    print("=========================")
-#Login    
-    login = input("Enter Full Name: ").strip().title()
-    print(f"Logged in as: {login}")
-    
-    print("=========================") 
-#Interface
+def display_menu(login): #fn2 (Interface)
     print("\n----- Options -----")
     print("1. Add Crew")
     print("2. Remove Crew")
@@ -29,7 +18,7 @@ def display_menu(): #fn2 (Interface)
     print("8. Count Officers")
     print("9. Exit & logout")
 #input choice
-    choice = input("\nChoose an option: ")
+    choice = input("\nselect option: ")
     return choice
 
 def add_member(names, ranks, divs, ids): #fn3 (opt 1)
@@ -180,8 +169,15 @@ def count_officers(ranks): #Fn10 (opt7)
 def fleet_manager(): #Fn11 (Main)
     names, ranks, divs, ids = init_database()
 
+    print("\n---Initilising Fleet Manager---")
+    print("   Welcome to Fleet Manager   ")
+    print("=========================")  
+    login = input("Enter Full Name: ").strip().title()
+    print(f"Logged in as: {login}")
+    print("=========================") 
+
     while True:
-        choice = display_menu()
+        choice = display_menu(login)
 
         if choice == "1":
             add_member(names, ranks, divs, ids)
