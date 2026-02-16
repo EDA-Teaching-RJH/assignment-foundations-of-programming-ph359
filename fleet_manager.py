@@ -176,7 +176,15 @@ def count_officers(ranks): #Fn10 (opt7)
 
     return officers
 
+def main(): #Fn11 (Main)
+    names, ranks, divs, ids = init_database()
 
+    while true:
+        choice = display_menu()
+
+        if choice == "1":
+            add_member(names, ranks, divs, ids)
+            
 
 
     
