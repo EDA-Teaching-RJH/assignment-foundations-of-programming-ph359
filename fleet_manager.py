@@ -152,15 +152,23 @@ def filter_by_division(names, ranks, divs, ids): #Fn8 (opt6)
     for i in range(len(names)):
         if divs[i] == filter:
             print(f"{ids[i]} - {names[i]} - {ranks[i]} - {divs[i]}")
-        
 
+def calculate_payroll(ranks): #Fn9 (opt7)
+    pay_table = {
+        "Captain": 1000,
+        "Commander": 800,
+        "Lieutenant Commander": 600,
+        "Lieutentant": 400,
+        "Acting Ensign": 200
+    }
+    total = 0
 
+    for i in ranks: 
+        total += pay_table[i]
+    return total
 
-            
-
+def count_officers(ranks): #Fn10 (opt7)
     
-    
-
 
 
 
