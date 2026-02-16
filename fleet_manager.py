@@ -189,6 +189,8 @@ def main(): #Fn11 (Main)
             remove_member(names, ranks, divs, ids)
         elif choice == "3":
             update_rank(names, ranks, ids)
+        elif choice == "4":
+            display_roster(names, ranks, divs, ids)
         
             
 
