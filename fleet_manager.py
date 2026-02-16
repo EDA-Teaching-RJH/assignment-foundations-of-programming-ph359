@@ -177,7 +177,7 @@ def count_officers(ranks): #Fn10 (opt7)
 
     return officers
 
-def main(): #Fn11 (Main)
+def fleet_manager(): #Fn11 (Main)
     names, ranks, divs, ids = init_database()
 
     while true:
@@ -198,7 +198,18 @@ def main(): #Fn11 (Main)
         elif choice == "7":
             total = calculate_payroll(ranks)
             print("Total cost of crew: ", total)
-        elif choice ==
+        elif choice == "8":
+            officers = count_officers(ranks)
+            print("officers in crew:", officers)
+        elif choice == "9":
+            print("Exiting Fleet Manager")
+            break
+
+        else:
+            print("Invalid choice")
+
+fleet_manager()
+    
         
             
 
