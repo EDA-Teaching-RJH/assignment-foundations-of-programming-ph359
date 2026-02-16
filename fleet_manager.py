@@ -191,6 +191,14 @@ def main(): #Fn11 (Main)
             update_rank(names, ranks, ids)
         elif choice == "4":
             display_roster(names, ranks, divs, ids)
+        elif choice == "5":
+            search_crew(names, ranks, divs, ids)
+        elif choice == "6":
+            filter_by_division(names, ranks, divs, ids)
+        elif choice == "7":
+            total = calculate_payroll(ranks)
+            print("Total cost of crew: ", total)
+        elif choice ==
         
             
 
