@@ -47,13 +47,13 @@ def add_member(names, ranks, divs, ids): #fn3 (opt 1)
     if new_id in ids:
         print("ID already exists.")
         return
-#Appends    
+#Adds item to end of list, keeps synced
     names.append(name)
     ranks.append(rank)
     divs.append(division)
     ids.append(new_id)
-
     print(f"{rank} {name} added to crew.")
+    print("=========================")
 
 def remove_member(names, ranks, divs, ids): #fn4 (opt 2)
 #Attempt to Convert input into an interger    
@@ -70,14 +70,14 @@ def remove_member(names, ranks, divs, ids): #fn4 (opt 2)
 #Finds postion of selected ID, links all parrallel lists    
     idx = ids.index(sel_id) 
     removed_crew = names[idx] 
-#Removes all data corressponding to the selected remove ID
+#Removes all data at given postion in list
 #Keep datapoint order synced
     names.pop(idx)
     ranks.pop(idx)
     divs.pop(idx)
     ids.pop(idx)
-
     print(f"{removed_crew} was removed from crew.")
+    print("=========================")
 
 def update_rank(names, ranks, ids): #fn5 (opt 3)
     valid_ranks = [ 
@@ -106,8 +106,8 @@ def update_rank(names, ranks, ids): #fn5 (opt 3)
   #Assigns new rank to selected ID, replaces old rank  
     old_rank = ranks[idx]
     ranks[idx] = new_rank
-
     print(f"{names[idx]}'s rank successfully updated from {old_rank} to {new_rank}.")
+    print("=========================")
     
 def display_roster(names, ranks, divs, ids): #Fn6 (Opt 4)
     if len(names) == 0:
@@ -130,7 +130,6 @@ def search_crew(names, ranks, divs, ids): #Fn7 (Opt 5)
 
     for i in range(len(names)):
         if crew_search in names[i]:
-            print("=========================")
             print(f"{ids[i]} - {names[i]} - {ranks[i]} - {divs[i]}")
             print("=========================")
    
@@ -144,32 +143,25 @@ def filter_by_division(names, ranks, divs, ids): #Fn8 (opt6)
 
     for i in range(len(names)):
         if divs[i] == filter:
-            print("=========================")
             print(f"{ids[i]} - {names[i]} - {ranks[i]} - {divs[i]}")
             print("=========================")
 
 def calculate_payroll(ranks): #Fn9 (opt7)
-    pay_table = {
-        "Captain": 1000,
-        "Commander": 800,
-        "Lieutenant Commander": 600,
-        "Lieutenant": 400,
-        "Acting Ensign": 200
-    }
     total = 0
 
-    for i in ranks: 
-        total += pay_table[i]
-    return total
-
-def count_officers(ranks): #Fn10 (opt7)
-    officers = 0
-
     for i in ranks:
-        if i == "Captain" or i == "Commander":
-            officers += 1
+        if i == "Captain":
+            total += 1000
+        elif i == "Commander":
+            total += 800
+        elif i == "Lieutenant Commander":
+            total += 600
+        elif i == "Lieutenant":
+            total += 400
+        elif i == "Acting Ensign":
+            total += 200
 
-    return officers
+    return total
 
 def fleet_manager(): #Fn11 (Main)
     names, ranks, divs, ids = init_database()
@@ -198,12 +190,10 @@ def fleet_manager(): #Fn11 (Main)
             filter_by_division(names, ranks, divs, ids)
         elif choice == "7":
             total = calculate_payroll(ranks)
-            print("=========================")
             print("Total cost of crew: ", total)
             print("=========================")
         elif choice == "8":
             officers = count_officers(ranks)
-            print("=========================")
             print("officers in crew:", officers)
             print("=========================")
         elif choice == "9":
